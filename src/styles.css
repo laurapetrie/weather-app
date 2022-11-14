@@ -1,0 +1,125 @@
+body {
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-weight: 500;
+  color: #4c3a51;
+}
+
+h5 {
+  color: #4c3a51;
+}
+
+.card {
+  max-width: 800px;
+  margin: 80px auto;
+  border-radius: 22px;
+  background: #fbfbfb;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+.card-body {
+  padding: 40px;
+}
+
+.btn-primary {
+  color: white;
+  background-color: #b25068;
+  font-weight: 500;
+  border: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 10px 0px;
+}
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+  background-color: #b63958 !important;
+}
+
+.daily-overview {
+  padding-top: 30px;
+}
+
+.date-time {
+  font-weight: 500;
+  font-size: 22px;
+  list-style: none;
+  color: #4c3a51;
+}
+
+.conditions {
+  list-style: none;
+  color: #4c3a51;
+}
+
+.daily-icon {
+  font-size: 60px;
+  color: #e7ab79;
+}
+
+#daily-temp {
+  font-size: 60px;
+  font-weight: 400;
+  padding-left: 30px;
+  color: #b63958;
+}
+
+#current-temp-celsius {
+  position: relative;
+  top: -30px;
+  font-size: 20px;
+  color: #b63958;
+  text-decoration: none;
+}
+
+#current-temp-celsius:hover {
+  font-weight: bold;
+}
+
+.divider {
+  position: relative;
+  top: -30px;
+  font-size: 20px;
+  color: #b63958;
+}
+#current-temp-fahrenheit {
+  position: relative;
+  top: -30px;
+  font-size: 20px;
+  color: #b63958;
+  text-decoration: none;
+}
+
+#current-temp-fahrenheit:hover {
+  font-weight: bold;
+}
+
+.weekly-weather-forecast {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.daily-forecast {
+  border-radius: 22px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  padding: 20px 0;
+}
+
+.forecast-icon {
+  font-size: 36px;
+  padding: 10px 0;
+  color: #e7ab79;
+}
+
+.forecast-temp {
+  padding-top: 10px;
+  font-size: 16x;
+  color: #b63958;
+}
