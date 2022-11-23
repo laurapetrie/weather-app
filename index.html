@@ -33,13 +33,12 @@
         <div class="card-body">
           <form id="city-search">
             <div class="row">
-              <div class="col-6">
+              <div class="col-8">
                 <input
                   type="search"
                   class="form-control"
                   placeholder="Please enter a location"
                   autocomplete="off"
-                  autofocus="on"
                   id="search-text-input"
                 />
               </div>
@@ -50,14 +49,17 @@
                   class="btn btn-primary w-100"
                 />
               </div>
-              <div class="col-3">
-                <button
+              <div class="col-1">
+                <a href="#"
+                  ><i class="fa-solid fa-location-dot current-location-icon"></i
+                ></a>
+                <!-- <button
                   type="button"
                   id="current-location-button"
                   class="btn btn-success w-100"
                 >
                   Current
-                </button>
+                </button> -->
               </div>
             </div>
           </form>
@@ -69,9 +71,11 @@
               </div>
               <div class="row">
                 <div class="col-6">
-                  <div class="d-flex weather-temperature">
-                    <img src="" alt="" id="icon" />
-                    <div>
+                  <div class="d-flex flex-row weather-temperature">
+                    <div class="icon-container">
+                      <img src="" alt="" id="icon" />
+                    </div>
+                    <div class="temperature-container">
                       <strong id="daily-temp"></strong
                       ><span class="units">
                         <a href="#" id="celsius-link" class="active">°C</a> |
@@ -129,8 +133,7 @@
         target="_blank"
         class="link"
         >Open-source code</a
-      >
-      by Laura Petrie</span
+      ><span class="creator-name"> by Laura Petrie</span></span
     >
     <script src="src/index.js"></script>
   </body>

@@ -5,11 +5,11 @@ body {
 
 h1 {
   font-weight: 500;
-  color: #4c3a51;
+  color: #56508b;
 }
 
 h5 {
-  color: #4c3a51;
+  color: #56508b;
 }
 
 h5:first-letter {
@@ -20,10 +20,10 @@ h5:first-letter {
   max-width: 800px;
   margin: 80px auto 30px auto;
   border-radius: 22px;
-  background: #fbfbfb;
-  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
-    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
-    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(1.5rem);
+  box-shadow: 0 1rem 3rem -2rem #493167,
+    inset 0 0 0.2rem rgba(255, 255, 255, 0.4);
 }
 
 .card-body {
@@ -45,6 +45,11 @@ h5:first-letter {
   background-color: #b63958 !important;
 }
 
+.current-location-icon {
+  color: #b25068;
+  font-size: 34px;
+}
+
 .daily-overview {
   padding-top: 30px;
 }
@@ -53,12 +58,12 @@ h5:first-letter {
   font-weight: 500;
   font-size: 22px;
   list-style: none;
-  color: #4c3a51;
+  color: #56508b;
 }
 
 .conditions {
   list-style: none;
-  color: #4c3a51;
+  color: #56508b;
 }
 
 .weather-temperature img {
@@ -69,14 +74,14 @@ h5:first-letter {
 
 .weather-temperature strong {
   font-weight: 400;
-  font-size: 64px;
+  font-size: 70px;
   padding-left: 36px;
   color: #b63958;
 }
 
 .weather-temperature .units {
   position: relative;
-  top: -40px;
+  top: -38px;
   font-size: 16px;
 }
 
@@ -92,12 +97,6 @@ h5:first-letter {
   font-weight: bold;
 }
 
-.divider {
-  position: relative;
-  top: -30px;
-  font-size: 20px;
-  color: #b63958;
-}
 #current-temp-fahrenheit {
   position: relative;
   top: -30px;
@@ -145,4 +144,8 @@ h5:first-letter {
 .link {
   text-decoration: none;
   color: #b63958;
+}
+
+.creator-name {
+  color: #56508b;
 }
