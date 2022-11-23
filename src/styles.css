@@ -12,6 +12,10 @@ h5 {
   color: #4c3a51;
 }
 
+h5:first-letter {
+  text-transform: capitalize;
+}
+
 .card {
   max-width: 800px;
   margin: 80px auto 30px auto;
@@ -57,16 +61,23 @@ h5 {
   color: #4c3a51;
 }
 
-.daily-icon {
-  font-size: 60px;
-  color: #e7ab79;
+.weather-temperature img {
+  margin-right: 5px;
+  height: 100px;
+  width: 100px;
 }
 
-#daily-temp {
-  font-size: 60px;
+.weather-temperature strong {
   font-weight: 400;
-  padding-left: 30px;
+  font-size: 64px;
+  padding-left: 36px;
   color: #b63958;
+}
+
+.weather-temperature .units {
+  position: relative;
+  top: -40px;
+  font-size: 16px;
 }
 
 #current-temp-celsius {
