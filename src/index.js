@@ -1,4 +1,5 @@
 //Search for a city
+
 function handleSubmit(event) {
   event.preventDefault();
   let cityElement = document.querySelector("#city");
@@ -8,7 +9,8 @@ function handleSubmit(event) {
   searchCity(cityInput.value);
 }
 
-// Search for the city at the apiUrl
+// Search for the city from the APi url
+
 function searchCity(cityInput) {
   let apiKey = "e7cba0f4344b9ae720f19t5d48co46c3";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${cityInput}&key=${apiKey}&units=metric`;
@@ -17,6 +19,7 @@ function searchCity(cityInput) {
 }
 
 // Then display the weather conditions for that city
+
 function displayWeather(response) {
   let city = document.querySelector("#city");
 
@@ -30,10 +33,9 @@ function displayWeather(response) {
 
   let iconElement = document.querySelector("#icon");
 
-  celsiusTemperature = response.data.temperature.current;
-
   city.innerHTML = response.data.city;
   currentTemp.innerHTML = Math.round(response.data.temperature.current);
+  celsiusTemperature = response.data.temperature.current;
   currentConditions.innerHTML = response.data.condition.description;
   currentHumidity.innerHTML = Math.round(response.data.temperature.humidity);
   currentWind.innerHTML = Math.round(response.data.wind.speed);
@@ -41,19 +43,16 @@ function displayWeather(response) {
   iconElement.setAttribute("alt", response.data.condition.description);
 }
 
-// Current location button
+// Current location pin
 
 function currentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(currentPreciseLocation);
 }
 
-let locationIcon = document.querySelector("#current-location-icon");
-locationIcon.addEventListener("click", currentLocation);
-
 function currentPreciseLocation(position) {
   let apiKey = "e7cba0f4344b9ae720f19t5d48co46c3";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${position.coordinates.longitude}&lat=${position.coordinates.latitude}&key=${apiKey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${position.coords.longitude}&lat=${position.coords.latitude}&key=${apiKey}&units=metric`;
   console.log(apiUrl);
   axios.get(apiUrl).then(displayWeather);
 }
@@ -77,6 +76,7 @@ function displayCelsiusTemp(event) {
 }
 
 //Date and time
+
 let now = new Date();
 let date = now.getDate();
 let hour = now.getHours();
@@ -115,8 +115,12 @@ let months = [
 ];
 
 // Global variables
+
 let form = document.querySelector("#city-search");
 form.addEventListener("submit", handleSubmit);
+
+let locationIcon = document.querySelector("#current-location-icon");
+locationIcon.addEventListener("click", currentLocation);
 
 let month = months[now.getMonth()];
 
@@ -134,5 +138,6 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
 
-// searchCity function outside of the other functions will run on page load
+// searchCity function will run on page load
+
 searchCity("London");
