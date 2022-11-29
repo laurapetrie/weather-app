@@ -41,11 +41,23 @@ function displayWeather(response) {
   currentWind.innerHTML = Math.round(response.data.wind.speed);
   iconElement.setAttribute("src", response.data.condition.icon_url);
   iconElement.setAttribute("alt", response.data.condition.description);
+
+  getForecast(response.data.city);
 }
 
-// Daily forecast
+// Get the daily forecast for the searched city
 
-function displayForecast() {
+function getForecast(city) {
+  console.log(city);
+  let apiKey = "e7cba0f4344b9ae720f19t5d48co46c3";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+// Then display the forecast for each day
+
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#weather-forecast");
 
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
@@ -68,7 +80,7 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
-// Current location pin
+// Pin displays weather in current location
 
 function currentLocation(event) {
   event.preventDefault();
@@ -166,4 +178,3 @@ celsiusLink.addEventListener("click", displayCelsiusTemp);
 // searchCity function will run on page load
 
 searchCity("London");
-displayForecast();
