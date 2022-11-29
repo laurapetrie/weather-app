@@ -9,7 +9,7 @@ function handleSubmit(event) {
   searchCity(cityInput.value);
 }
 
-// Search for the city from the APi url
+// Search for that city from the APi url
 
 function searchCity(cityInput) {
   let apiKey = "e7cba0f4344b9ae720f19t5d48co46c3";
@@ -48,35 +48,50 @@ function displayWeather(response) {
 // Get the daily forecast for the searched city
 
 function getForecast(city) {
-  console.log(city);
   let apiKey = "e7cba0f4344b9ae720f19t5d48co46c3";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
+// Change the time to a readable day
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 // Then display the forecast for each day
 
 function displayForecast(response) {
+  let forecast = response.data.daily;
   console.log(response.data.daily);
+
   let forecastElement = document.querySelector("#weather-forecast");
 
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
-
   let forecastHTML = `<div class="row justify-content-between weekly-weather-forecast">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2 daily-forecast">
-              <h5>${day}</h5>
-              <i class="fa-solid fa-cloud forecast-icon"></i>
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML += `<div class="col-2 daily-forecast-card">
+              <h5 class="forecast-day">${formatDay(forecastDay.time)}</h5>
+              <img src="${
+                forecastDay.condition.icon_url
+              }" alt="weather-icon" id="icon" />
               <div class="forecast-temp">
-                <span><strong>17°</strong> | 63°</span>
+                <span><strong>${Math.round(
+                  forecastDay.temperature.maximum
+                )}°</strong> | ${Math.round(
+        forecastDay.temperature.minimum
+      )}°</span>
               </div>
             </div>
   `;
+    }
   });
 
-  forecastHTML = forecastHTML + `</div>`;
+  forecastHTML += `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 
@@ -112,7 +127,7 @@ function displayCelsiusTemp(event) {
   currentTemp.innerHTML = Math.round(celsiusTemperature);
 }
 
-//Date and time
+//Current date and time
 
 let now = new Date();
 let date = now.getDate();
