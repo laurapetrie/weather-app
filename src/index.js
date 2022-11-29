@@ -43,6 +43,31 @@ function displayWeather(response) {
   iconElement.setAttribute("alt", response.data.condition.description);
 }
 
+// Daily forecast
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
+
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+
+  let forecastHTML = `<div class="row justify-content-between weekly-weather-forecast">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2 daily-forecast">
+              <h5>${day}</h5>
+              <i class="fa-solid fa-cloud forecast-icon"></i>
+              <div class="forecast-temp">
+                <span><strong>17°</strong> | 63°</span>
+              </div>
+            </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 // Current location pin
 
 function currentLocation(event) {
@@ -141,3 +166,4 @@ celsiusLink.addEventListener("click", displayCelsiusTemp);
 // searchCity function will run on page load
 
 searchCity("London");
+displayForecast();
