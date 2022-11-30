@@ -26,6 +26,17 @@ a {
   color: #56508b;
 }
 
+/* Current location pin */
+#current-location-icon {
+  color: #b25068;
+  font-size: 34px;
+}
+
+#current-location-icon:hover {
+  color: #b63958;
+}
+
+/* Weather app card styling */
 .card {
   max-width: 800px;
   margin: 80px auto 30px auto;
@@ -40,7 +51,7 @@ a {
   padding: 40px;
 }
 
-/* Search form button and location icon */
+/* Search form button */
 .btn-primary {
   color: white;
   background-color: #b25068;
@@ -56,12 +67,7 @@ a {
   background-color: #b63958 !important;
 }
 
-#current-location-icon {
-  color: #b25068;
-  font-size: 34px;
-}
-
-/* City and weather description */
+/* Current city and weather description */
 .daily-overview {
   padding-top: 30px;
 }
@@ -125,12 +131,6 @@ a {
 .forecast-day {
   margin-top: 5px;
   margin-bottom: 0;
-}
-
-.forecast-icon {
-  font-size: 36px;
-  padding: 10px 0;
-  color: #e7ab79;
 }
 
 .forecast-temp {

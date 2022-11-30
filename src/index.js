@@ -63,7 +63,7 @@ function formatDay(timestamp) {
   return days[day];
 }
 
-// Then display the forecast for each day
+// Then display the 5 day forecast for each day
 
 function displayForecast(response) {
   let forecast = response.data.daily;
