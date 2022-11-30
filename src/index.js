@@ -9,7 +9,7 @@ function handleSubmit(event) {
   searchCity(cityInput.value);
 }
 
-// Search for that city from the APi url
+// Search for that city from the API url
 
 function searchCity(cityInput) {
   let apiKey = "e7cba0f4344b9ae720f19t5d48co46c3";
@@ -67,13 +67,12 @@ function formatDay(timestamp) {
 
 function displayForecast(response) {
   let forecast = response.data.daily;
-  console.log(response.data.daily);
 
   let forecastElement = document.querySelector("#weather-forecast");
 
   let forecastHTML = `<div class="row justify-content-between weekly-weather-forecast">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 5) {
+    if (index > 0 && index < 6) {
       forecastHTML += `<div class="col-2 daily-forecast-card">
               <h5 class="forecast-day">${formatDay(forecastDay.time)}</h5>
               <img src="${
@@ -82,7 +81,7 @@ function displayForecast(response) {
               <div class="forecast-temp">
                 <span><strong>${Math.round(
                   forecastDay.temperature.maximum
-                )}°</strong> | ${Math.round(
+                )}</strong>° | ${Math.round(
         forecastDay.temperature.minimum
       )}°</span>
               </div>
