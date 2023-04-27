@@ -1,15 +1,19 @@
 
 <h1 align="center">Weather Application</h1> 
 
-<p align="center">
-This is a weather application built with Vanilla JavaScript, that provides current weather information for a specific location.
-The application uses the SheCodes Weather API (https://www.shecodes.io/learn/apis/weather) to get weather data for a particular location entered by the user.</p>
+<p>
+This is a weather application built with Vanilla JavaScript, which provides current weather information for a specific location.
+The application uses the SheCodes Weather API (https://www.shecodes.io/learn/apis/weather) to retrieve and display weather data for a particular location entered by the user.</p>
+
+Project link: https://laurapetrie-js-weather-app.netlify.app/
+
 
 ## Features
 
-- Searching by city or clicking on the pin will display the live weather data for the current location.
+- Searching by city will display the live weather data for the searched for city.
+- Clicking on the pin uses the geolocation API to display weather data for the users current location.
 - The app displays the temperature, weather description, humidity, wind speed and weather icon for the searched location.
-- The user can toggle the temperature unit between Fahrenheit and Celsius.
+- The user can toggle the temperature unit between Fahrenheit and Celsius for the current day.
 - The app displays the next five days forecast with the weather icon and maximum and minimum temperatures for each day.
 
 ## Contributing
@@ -21,3 +25,4 @@ Pull requests are also welcome! If you'd like to contribute to this project, ple
 ## License
 
 This project is licensed under the MIT License.
+
